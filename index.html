@@ -4,6 +4,14 @@ Veterinaria
 <html lang="es">
 <head>
   <style>
+   #malla {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px;
+}
+
     body {
       font-family: Arial, sans-serif;
       background: #f4f4f4;
@@ -55,10 +63,37 @@ Veterinaria
       color: #999;
       cursor: not-allowed;
     }
+   .semestre {
+  padding: 15px;
+  min-width: 300px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  color: #000;
+}
+
+/* Colores diferentes por semestre */
+#sem-1 { background: #e3f2fd; border-left: 6px solid #2196f3; }
+#sem-2 { background: #fce4ec; border-left: 6px solid #e91e63; }
+#sem-3 { background: #e8f5e9; border-left: 6px solid #4caf50; }
+#sem-4 { background: #fff3e0; border-left: 6px solid #ff9800; }
+#sem-5 { background: #ede7f6; border-left: 6px solid #673ab7; }
+#sem-6 { background: #f3e5f5; border-left: 6px solid #9c27b0; }
+#sem-7 { background: #fbe9e7; border-left: 6px solid #ff5722; }
+#sem-8 { background: #f1f8e9; border-left: 6px solid #8bc34a; }
+#sem-9 { background: #e0f7fa; border-left: 6px solid #00bcd4; }
+#sem-10 { background: #f9fbe7; border-left: 6px solid #cddc39; }
+
   </style>
 </head>
 
 <body>
+ body {
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 100vh;
+}
+
 <div class="semestre" id="sem-1">
   <h2>Semestre 1</h2>
   <ul>
