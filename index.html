@@ -1,0 +1,223 @@
+ # malla--curricular
+Veterinaria
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2e5c2d;
+    }
+
+    .semestre {
+      background: white;
+      padding: 15px;
+      margin: 20px auto;
+      border-left: 8px solid #2e5c2d;
+      max-width: 700px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      background: #e0ffe0;
+      padding: 10px;
+      margin: 6px 0;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    li:hover:not(.disabled):not(.completed) {
+      background: #c2f0c2;
+    }
+
+    li.completed {
+      background: #d3d3d3;
+      text-decoration: line-through;
+      color: #777;
+      pointer-events: none;
+    }
+
+    li.disabled {
+      background: #f0f0f0;
+      color: #999;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+
+<body>
+<div class="semestre" id="sem-1">
+  <h2>Semestre 1</h2>
+  <ul>
+    <li data-code="CAA01">Introducción a las Ciencias Agrarias</li>
+    <li data-code="CAA02">Agroecosistemas</li>
+    <li data-code="CAA03">Fundamentos en Escritos Científicos</li>
+    <li data-code="CBA24">Matemáticas I</li>
+    <li data-code="CBA25">Biología Molecular y Celular</li>
+    <li data-code="CBA26">Bioquímica I</li>
+    <li data-code="FLA01">Identidad Lasallista</li>
+    <li data-code="MVA01">Electiva Interdisciplinar I</li>
+  </ul>
+</div>
+
+<div class="semestre" id="sem-2">
+  <h2>Semestre 2</h2>
+  <ul>
+    <li data-code="CBA16" data-prereq="CBA24">Métodos Estadísticos</li>
+    <li data-code="CBA36" data-prereq="CBA26">Bioquímica II</li>
+    <li data-code="FLA02">Humanidades I</li>
+    <li data-code="MVA02" data-prereq="CBA25">Anatomía</li>
+    <li data-code="MVA03" data-prereq="CBA25">Histología y Embriología</li>
+    <li data-code="MVA04">Electiva Interdisciplinar II</li>
+  </ul>
+</div>
+<div class="semestre" id="sem-3">
+  <h2>Semestre 3</h2>
+  <ul>
+    <li data-code="FLA03">Humanidades II</li>
+    <li data-code="MVA05" data-prereq="CBA25">Anatomía II</li>
+    <li data-code="MVA06" data-prereq="CBA36">Fisiología General</li>
+    <li data-code="MVA07" data-prereq="CBA36">Inmunología</li>
+    <li data-code="MVA08" data-prereq="CBA25">Parasitología Veterinaria</li>
+    <li data-code="MVA09">Desarrollo Rural y Territorio</li>
+    <li data-code="MVA10">Electiva Disciplinar I</li>
+  </ul>
+</div>
+
+<div class="semestre" id="sem-4">
+  <h2>Semestre 4</h2>
+  <ul>
+    <li data-code="FLA04">Cultura Religiosa I</li>
+    <li data-code="MVA11" data-prereq="MVA05,MVA06">Fisiología Médica I</li>
+    <li data-code="MVA12" data-prereq="MVA07">Bacteriología y Micología</li>
+    <li data-code="MVA13" data-prereq="MVA07">Virología y Priones</li>
+    <li data-code="MVA14" data-prereq="CBA16">Epidemiología</li>
+    <li data-code="MVA15" data-prereq="CBA36">Nutrición General</li>
+    <li data-code="MVA16">Electiva Interdisciplinar III</li>
+    <li data-code="MVA17" data-prereq="CBA16">Investigación Aplicada</li>
+  </ul>
+</div>
+<div class="semestre" id="sem-5">
+  <h2>Semestre 5</h2>
+  <ul>
+    <li data-code="FLA05">Cultura Religiosa II</li>
+    <li data-code="MVA18" data-prereq="MVA11">Fisiología Médica II</li>
+    <li data-code="MVA19" data-prereq="MVA06">Fisiología de la Reproducción</li>
+    <li data-code="MVA20" data-prereq="CBA16">Genética Animal</li>
+    <li data-code="MVA21" data-prereq="MVA08,MVA12,MVA13,MVA11,MVA15">Mecanismos de Enfermedad</li>
+    <li data-code="MVA22">Nutrición Clínica</li>
+    <li data-code="MVA23">Electiva Disciplinar II</li>
+  </ul>
+</div>
+
+<div class="semestre" id="sem-6">
+  <h2>Semestre 6</h2>
+  <ul>
+    <li data-code="FLA06">Cultura Religiosa III</li>
+    <li data-code="MVA24" data-prereq="MVA18">Farmacología</li>
+    <li data-code="MVA25" data-prereq="MVA19">Andrología</li>
+    <li data-code="MVA26" data-prereq="MVA18">Semiología</li>
+    <li data-code="MVA27" data-prereq="MVA21">Patología Sistémica</li>
+    <li data-code="MVA28" data-prereq="MVA22">Sistemas de Producción I</li>
+    <li data-code="MVA29" data-prereq="MVA14">Seguridad e Inocuidad Alimentaria</li>
+    <li data-code="MVA30">Electiva Interdisciplinar IV</li>
+  </ul>
+</div>
+<div class="semestre" id="sem-7">
+  <h2>Semestre 7</h2>
+  <ul>
+    <li data-code="MVA31" data-prereq="MVA21">Patología Clínica</li>
+    <li data-code="MVA32" data-prereq="MVA22">Sistemas de Producción II</li>
+    <li data-code="MVA33" data-prereq="MVA27">Medicina en la Producción Aviar</li>
+    <li data-code="MVA34">Imaginología</li>
+    <li data-code="MVA35" data-prereq="MVA24">Toxicología</li>
+    <li data-code="MVA36" data-prereq="MVA19">Ginecología</li>
+    <li data-code="MVA38">Electiva Disciplinar III</li>
+  </ul>
+</div>
+
+<div class="semestre" id="sem-8">
+  <h2>Semestre 8</h2>
+  <ul>
+    <li data-code="FLA07">Ética General</li>
+    <li data-code="MVA39">Cirugía General</li>
+    <li data-code="MVA40">Medicina Interna de Pequeñas Especies</li>
+    <li data-code="MVA41">Medicina en Producción de Medianas Especies</li>
+    <li data-code="MVA42">Medicina Interna de Equinos</li>
+    <li data-code="MVA43">Medicina en Producción Bovina</li>
+    <li data-code="MVA44">Electiva Disciplinar IV</li>
+  </ul>
+</div>
+<div class="semestre" id="sem-9">
+  <h2>Semestre 9</h2>
+  <ul>
+    <li data-code="MVA45" data-prereq="MVA36">Teriogenología</li>
+    <li data-code="MVA46" data-prereq="MVA39">Técnica Quirúrgica</li>
+    <li data-code="MVA47" data-prereq="MVA40">Clínica y Bienestar de Pequeñas Especies</li>
+    <li data-code="MVA48">Medicina de Especies Silvestres</li>
+    <li data-code="MVA49" data-prereq="MVA43">Clínica y Bienestar de Bovinos</li>
+    <li data-code="MVA50" data-prereq="MVA42">Clínica y Bienestar de Equinos</li>
+    <li data-code="MVA51">Terapéutica y Responsabilidad Socioambiental</li>
+  </ul>
+</div>
+
+<div class="semestre" id="sem-10">
+  <h2>Semestre 10</h2>
+  <ul>
+    <li data-code="FLA08">Ética en las Profesiones</li>
+    <li data-code="MVA52">Práctica Empresarial y Clínica Ambulatoria</li>
+    <li data-code="MVA53">Proyecto</li>
+  </ul>
+</div>
+
+
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const materias = document.querySelectorAll("li[data-code]");
+
+    materias.forEach(materia => {
+      const prereq = materia.dataset.prereq;
+      if (!prereq) {
+        materia.classList.remove("disabled");
+      } else {
+        materia.classList.add("disabled");
+      }
+
+      materia.addEventListener("click", () => {
+        if (materia.classList.contains("disabled") || materia.classList.contains("completed")) return;
+        materia.classList.add("completed");
+
+        materias.forEach(m => {
+          const reqs = m.dataset.prereq?.split(",") || [];
+
+          if (reqs.includes(materia.dataset.code)) {
+            const todosCumplidos = reqs.every(codigo => {
+              const mat = document.querySelector(`li[data-code='${codigo}']`);
+              return mat && mat.classList.contains("completed");
+            });
+
+            if (todosCumplidos) {
+              m.classList.remove("disabled");
+            }
+          }
+        });
+      });
+    });
+  });
+</script>
+
+</body>
